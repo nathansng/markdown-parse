@@ -1,0 +1,7 @@
+# [Task 1]: This isn't a link (ps. this is meant to break the code)
+
+[actual link](hello_there.com)
+
+Also doesn't work if there are brackets[] and followed by parenthesis. This (will) extract unintended strings.
+
+[another link](find_this.com)
