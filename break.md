@@ -8,3 +8,4 @@ Also doesn't work if there are brackets[] and followed by parenthesis. This (wil
 
 Below is supposed to show a downloaded image, not a useable link:
 ![image of something](desktop/folder/image.png)
+

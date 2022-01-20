@@ -14,9 +14,16 @@ public class MarkdownParse {
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
+            // Check that openParen comes after nextCloseBracket
             int closeParen = markdown.indexOf(")", openParen);
+            // Check to make sure it's not an image
             if (nextOpenBracket > 0 && markdown.charAt(nextOpenBracket-1) == '!') {
                 currentIndex = closeParen + 1;
+                continue;
+            }
+            // Check that close bracket is followed by open parenthesis
+            if (openParen - nextCloseBracket > 1) {
+                currentIndex = nextCloseBracket + 1;
                 continue;
             }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
