@@ -13,6 +13,10 @@ public class MarkdownParse {
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
+            // Check if no more possible links
+            if (nextOpenBracket < 0) {
+                break;
+            }
             // Check to make sure it's not an image
             if (nextOpenBracket > 0 && markdown.charAt(nextOpenBracket-1) == '!') {
                 currentIndex = closeParen + 1;
