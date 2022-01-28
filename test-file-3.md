@@ -1,2 +1,2 @@
-This is just some text [enter some things in brackets here]
+This is just some text [enter some things in the brackets here]
 (don't extract this!)
