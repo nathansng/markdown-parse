@@ -7,24 +7,12 @@ import java.util.ArrayList;
 public class MarkdownParse {
     public static ArrayList<String> getLinks(String markdown) {
         ArrayList<String> toReturn = new ArrayList<>();
-        // find the next [, then find the ], then find the (, then take up to
-        // the next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
-            // Check to make sure it's not an image
-            if (nextOpenBracket > 0 && markdown.charAt(nextOpenBracket-1) == '!') {
-                currentIndex = closeParen + 1;
-                continue;
-            }
-            // Check that close bracket is followed by open parenthesis
-            if (openParen - nextCloseBracket > 1) {
-                currentIndex = nextCloseBracket + 1;
-                continue;
-            }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }
