@@ -1,1 +1,1 @@
-![image of something](desktop/folder/image.png)
+![image_of_something](desktop/folder/image.png)
