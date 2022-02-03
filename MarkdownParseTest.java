@@ -17,6 +17,7 @@ public class MarkdownParseTest {
     String file2;
     String file3;
     String file4;
+    String file6;
 
     ArrayList<String> links;
 
@@ -28,15 +29,19 @@ public class MarkdownParseTest {
         file3 = Files.readString(Path.of("test-file-3.md"));
         file4 = Files.readString(Path.of("test-file-4.md"));
 
+        file6 = Files.readString(Path.of("test-file-6.md"));
+
 
         // Works locally
-        // file1 = Files.readString(Path.of("/Users/nate/Desktop/_UCSD_Winter_2022/CSE_15L/markdown-parse/test-file.md"));
+        file1 = Files.readString(Path.of("/Users/nate/Desktop/_UCSD_Winter_2022/CSE_15L/markdown-parse/test-file.md"));
 
-        // file2 = Files.readString(Path.of("/Users/nate/Desktop/_UCSD_Winter_2022/CSE_15L/markdown-parse/test-file-2.md"));
+        file2 = Files.readString(Path.of("/Users/nate/Desktop/_UCSD_Winter_2022/CSE_15L/markdown-parse/test-file-2.md"));
 
-        // file3 = Files.readString(Path.of("/Users/nate/Desktop/_UCSD_Winter_2022/CSE_15L/markdown-parse/test-file-3.md"));
+        file3 = Files.readString(Path.of("/Users/nate/Desktop/_UCSD_Winter_2022/CSE_15L/markdown-parse/test-file-3.md"));
 
-        // file4 = Files.readString(Path.of("/Users/nate/Desktop/_UCSD_Winter_2022/CSE_15L/markdown-parse/test-file-4.md"));
+        file4 = Files.readString(Path.of("/Users/nate/Desktop/_UCSD_Winter_2022/CSE_15L/markdown-parse/test-file-4.md"));
+
+        file6 = Files.readString(Path.of("/Users/nate/Desktop/_UCSD_Winter_2022/CSE_15L/markdown-parse/test-file-6.md"));
     }
 
     /**
@@ -94,5 +99,11 @@ public class MarkdownParseTest {
     @Test
     public void failTest() {
         assertEquals(10, 5 + 5);
+    }
+
+    @Test public void testTestFile6() {
+            List<String> results = List.of("random.com(", "random.com()");
+            links = MarkdownParse.getLinks(file6);
+            assertEquals(results, links);
     }
 }
