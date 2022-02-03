@@ -27,6 +27,10 @@ public class MarkdownParse {
                 currentIndex = closeParen + 1;
                 continue;
             }
+            // Check for valid substrings
+            if (closeParen <= openParen) {
+                break;
+            }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }

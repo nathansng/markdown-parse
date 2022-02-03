@@ -1,5 +1,5 @@
 /**
-javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar MarkdownParseTest.java
+javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar MarkdownParse.java MarkdownParseTest.java
 
 java -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MarkdownParseTest
  */
@@ -69,8 +69,7 @@ public class MarkdownParseTest {
      */
     @Test
     public void testTestFile3() throws IOException {
-        List<String> results = List.of("insert_link.com", "secondlink.org",
-        "hello_world.html");
+        List<String> results = List.of();
         links = MarkdownParse.getLinks(file3);
         assertEquals(results, links);
     }
@@ -80,7 +79,7 @@ public class MarkdownParseTest {
      */
     @Test
     public void testTestFile4() {
-        List<String> results = List.of("");
+        List<String> results = List.of("Extract this text here.com");
         links = MarkdownParse.getLinks(file4);
         assertEquals(results, links);
     }
