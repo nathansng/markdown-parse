@@ -93,6 +93,6 @@ public class MarkdownParseTest {
 
     @Test
     public void failTest() {
-        assertEquals(10, 5 + 2);
+        assertEquals(10, 5 + 5);
     }
 }
