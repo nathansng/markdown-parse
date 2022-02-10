@@ -101,9 +101,9 @@ public class MarkdownParseTest {
         assertEquals(10, 5 + 5);
     }
 
-    @Test public void testTestFile6() {
-            List<String> results = List.of("random.com(", "random.com()");
-            links = MarkdownParse.getLinks(file6);
-            assertEquals(results, links);
-    }
+    // @Test public void testTestFile6() {
+    //         List<String> results = List.of("random.com(", "random.com()");
+    //         links = MarkdownParse.getLinks(file6);
+    //         assertEquals(results, links);
+    // }
 }
