@@ -26,6 +26,17 @@ public class MarkdownParse {
             }
             ArrayList<String> links = getLinks(Files.readString(p));
             result.put(dirOrFile.getPath(), links);
+
+	    // Checks if all characters are in the file
+	    String contents = Files.readString(p);
+	    int openBracket = contents.indexOf("[", 0);
+	    int closeBracket = contents.indexOf("]", openBracket);
+	    int openParen = contents.indexOf("(", closeBracket);
+	    int closeParen = contents.indexOf(")", openParen);
+	    if (openBracket >= 0 && closeBracket > 0 && openParen > 0 && closeParen > 0) {
+		    System.out.println(p);
+	    }
+
             return result;
         }
     }
