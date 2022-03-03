@@ -14,7 +14,7 @@ import java.util.*;
 
 import org.junit.*;
 
-public class MarkdownParseTest2 {
+public class MarkdownParseTest {
     String file1;
     String file2;
     String file3;
